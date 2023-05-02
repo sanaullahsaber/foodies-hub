@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -28,10 +26,36 @@ const Header = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link className="text-light text-decoration-none fs-3 fw-bold" to="/">Home</Nav.Link>
-                <Nav.Link className="text-light text-decoration-none fs-3 fw-bold" to="/about">About Us</Nav.Link>
-                <Nav.Link className="text-light text-decoration-none fs-3 fw-bold" to="/blog">Blog</Nav.Link>
-                <Nav.Link className="text-light text-decoration-none fs-3 fw-bold" to="/contact">Contact</Nav.Link>
+                <Nav.Link>
+                  <Link
+                    className="text-light text-decoration-none fs-3 fw-bold"
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    className="text-light text-decoration-none fs-3 fw-bold"
+                    to="/about"
+                  >
+                    About Us
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    className="text-light text-decoration-none fs-3 fw-bold"
+                    to="/blog"
+                  >
+                    Blog
+                  </Link>
+                </Nav.Link>
+                <Nav.Link
+                  className="text-light text-decoration-none fs-3 fw-bold"
+                  to="/contact"
+                >
+                  Contact
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

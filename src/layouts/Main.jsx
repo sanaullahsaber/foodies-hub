@@ -1,17 +1,18 @@
 import React from 'react';
+
 import NavigationBar from "../pages/Shared/NavigationBar/NavigationBar";
-import HeaderBanner from '../pages/Shared/HeaderBanner/HeaderBanner';
-import PopularDishes from '../pages/Shared/PopularDishes/PopularDishes';
-import HomeFacility from '../pages/Shared/HomeFacility/HomeFacility';
 import Footer from '../pages/Shared/Footer/Footer';
+import Home from '../pages/Home/Home';
+import { Outlet } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const Main = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
-      <HeaderBanner></HeaderBanner>
-      <HomeFacility></HomeFacility>
-      <PopularDishes></PopularDishes>
+      <Container>
+        <Outlet></Outlet>
+      </Container>
       <Footer></Footer>
     </div>
   );

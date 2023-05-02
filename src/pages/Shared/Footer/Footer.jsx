@@ -1,6 +1,15 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { FaFacebookF, FaTwitter, FaInstagram, FaReact, FaPhoneAlt, FaMailBulk, FaMapMarkerAlt } from "react-icons/fa";
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaReact,
+  FaPhoneAlt,
+  FaMailBulk,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,19 +28,18 @@ const Footer = () => {
               <h5 className="mb-3">Quick Links</h5>
               <ul className="list-unstyled">
                 <li className="mb-2">
-                  <a href="#" className="">
-                    Home
-                  </a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="mb-2">
-                  <a href="#" className="">
-                    Recipes
-                  </a>
+                  <Link to='/about'>
+                   About Us
+                  </Link>
+                  
                 </li>
                 <li className="mb-2">
-                  <a href="#" className="">
-                    Blog
-                  </a>
+                  <Link to='/blog'>
+                  Blog
+                  </Link>
                 </li>
                 <li className="mb-2">
                   <a href="#" className="">
@@ -59,17 +67,26 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <p><FaPhoneAlt className='text-white me-2'></FaPhoneAlt>+0584 55487 554</p>
-              <p> <FaMailBulk className='text-white me-2'></FaMailBulk> mail@gmail.com</p>
-              <p> <FaMapMarkerAlt className='text-white me-2'></FaMapMarkerAlt> Mountain View, California, United States</p>
+              <p>
+                <FaPhoneAlt className="text-white me-2"></FaPhoneAlt>+0584 55487
+                554
+              </p>
+              <p>
+                {" "}
+                <FaMailBulk className="text-white me-2"></FaMailBulk>{" "}
+                mail@gmail.com
+              </p>
+              <p>
+                {" "}
+                <FaMapMarkerAlt className="text-white me-2"></FaMapMarkerAlt>{" "}
+                Mountain View, California, United States
+              </p>
             </Col>
           </Row>
           <hr className="my-5" />
           <Row>
             <Col xs={12} className="text-center">
-              <p className=" mb-0">
-                © 2023 FoodiesHub. All Rights Reserved.
-              </p>
+              <p className=" mb-0">© 2023 FoodiesHub. All Rights Reserved.</p>
               <p className=" mb-0">
                 Built with <FaReact></FaReact> React
               </p>
