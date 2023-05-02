@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <div className="fixed-top" style={{ backgroundColor: "black" }}>
       <Container>
         <Navbar expand="lg">
           <Container fluid>
