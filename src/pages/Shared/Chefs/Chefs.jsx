@@ -18,8 +18,8 @@ const Chefs = () => {
       <h3 className="text-center">Our Top Chefs</h3>
       <Row>
         {chefs.map((chef) => (
-          <Col md={4} key={chef.id}>
-            <ChefsCard chef={chef} />
+          <Col md={4}>
+            <ChefsCard key={chef.id} chef={chef} />
           </Col>
         ))}
       </Row>
