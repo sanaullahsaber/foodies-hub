@@ -7,7 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log('login page location', location);
@@ -32,6 +32,7 @@ const Login = () => {
   };
 
 
+
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
@@ -43,6 +44,19 @@ const Login = () => {
         console.log(error)
     })
   }
+
+
+  const handleGithubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, {replace: true})
+      })
+      .catch((error) => {
+      console.log(error);
+    })
+  };
 
   return (
     <Container className="d-flex flex-column align-items-center justify-content-center min-vh-100">
@@ -78,7 +92,7 @@ const Login = () => {
         <Button onClick={handleGoogleSignIn} variant="primary" type="submit" className="w-100 mt-1 p-1">
          <FaGoogle></FaGoogle>oogle
         </Button>
-        <Button variant="primary" type="submit" className="w-100 mt-1 p-1">
+        <Button onClick={handleGithubSignIn} variant="primary" type="submit" className="w-100 mt-1 p-1">
           <FaGithub></FaGithub>GitHub
         </Button>
       </Form>
