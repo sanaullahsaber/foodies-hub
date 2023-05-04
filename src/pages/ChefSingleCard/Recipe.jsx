@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { FaRegBookmark, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+
+
+  import { ToastContainer, toast } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
+
 const Recipe = ({ recipe }) => {
-  const { recipe_name, ingredients, cooking_method, rating, photo_url } =
-    recipe;
+  const { recipe_name, ingredients, cooking_method, rating, photo_url } = recipe;
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const handleBookmarkClick = () => {
+    setIsBookmarked(true);
+    toast("Recipe bookmarked successfully!");
+  };
+
   return (
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
           <img
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%",}}
             src={photo_url}
             className="img-fluid rounded-start"
             alt="..."
@@ -35,18 +46,21 @@ const Recipe = ({ recipe }) => {
                 ></Rating>
                 <span>{rating}</span>
               </div>
-              <div>
-                <h6>
-                  Add to BookMark <FaRegBookmark></FaRegBookmark>{" "}
-                </h6>
-              </div>
+              <div></div>
             </div>
             <div className="text-center mt-1">
-              <Link to='/'>
-                <Button className="" variant="success">
-                  Back to Home
-                </Button>
-              </Link>
+              <Button
+                className=""
+                variant="success"
+                disabled={isBookmarked}
+                onClick={handleBookmarkClick}
+              >
+                <h6>
+                  {isBookmarked ? "Bookmarked" : "Add to Bookmark"}{" "}
+                  <FaRegBookmark></FaRegBookmark>{" "}
+                </h6>
+              </Button>
+              <ToastContainer />
             </div>
           </div>
         </div>
