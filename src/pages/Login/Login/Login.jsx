@@ -4,9 +4,10 @@ import Button from "react-bootstrap/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext)
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log('login page location', location);
@@ -30,6 +31,18 @@ const Login = () => {
       });
   };
 
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, {replace: true})
+      })
+      .catch((error) => {
+        console.log(error)
+    })
+  }
 
   return (
     <Container className="d-flex flex-column align-items-center justify-content-center min-vh-100">
@@ -57,11 +70,17 @@ const Login = () => {
           Login
         </Button>
         <Form.Text className="mt-3 text-secondary">
-          Don't have an account yet?{' '}
+          Don't have an account yet?{" "}
           <Link to="register" className="text-decoration-none">
             Register now
           </Link>
         </Form.Text>
+        <Button onClick={handleGoogleSignIn} variant="primary" type="submit" className="w-100 mt-1 p-1">
+         <FaGoogle></FaGoogle>oogle
+        </Button>
+        <Button variant="primary" type="submit" className="w-100 mt-1 p-1">
+          <FaGithub></FaGithub>GitHub
+        </Button>
       </Form>
     </Container>
   );
