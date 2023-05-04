@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
@@ -34,43 +34,62 @@ const NavigationBar = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav className="me-3">
-                  <Link
-                    className="text-light text-decoration-none fs-3 fw-bold"
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </Nav>
-                <Nav className="me-3">
-                  <Link
-                    className="text-light text-decoration-none fs-3 fw-bold"
-                    to="/about"
-                  >
-                    About Us
-                  </Link>
-                </Nav>
-                <Nav className="me-3">
-                  <Link
-                    className="text-light text-decoration-none fs-3 fw-bold"
-                    to="/blog"
-                  >
-                    Blog
-                  </Link>
-                </Nav>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
+                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                  }
+                >
+                  Home
+                </NavLink>
+
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
+                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                  }
+                >
+                  About Us
+                </NavLink>
+
+                <NavLink
+                  to="/blog"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
+                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                  }
+                >
+                  blog
+                </NavLink>
 
                 <Nav className="text-light text-decoration-none fs-3 fw-bold">
                   {user ? (
-                    <Link onClick={handleLogOut} className="text-light text-decoration-none fs-3 fw-bold" >
-                      Logout 
-                    </Link>
+                    <NavLink
+                      onClick={handleLogOut}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-light me-3 text-decoration-none fs-3 fw-bold"
+                          : " mx-2 text-decoration-none fs-3 fw-bold"
+                      }
+                    >
+                      Logout
+                    </NavLink>
                   ) : (
-                    <Link
-                      className="text-light text-decoration-none fs-3 fw-bold"
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-light me-3 text-decoration-none fs-3 fw-bold"
+                          : " mx-2 text-decoration-none fs-3 fw-bold"
+                      }
                       to="/login"
                     >
                       Login
-                    </Link>
+                    </NavLink>
                   )}
                 </Nav>
 

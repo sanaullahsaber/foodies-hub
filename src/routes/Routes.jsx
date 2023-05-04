@@ -10,6 +10,7 @@ import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../pages/Shared/Terms/Terms";
 const router = createBrowserRouter([
+  
   {
     path: "/login",
     element: <LoginLayout></LoginLayout>,

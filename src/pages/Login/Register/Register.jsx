@@ -36,6 +36,7 @@ const Register = () => {
   };
 
   return (
+    
     <Container className="d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
       <Card className="w-100 " style={{ maxWidth: "400px" }}>
         <Card.Body>
