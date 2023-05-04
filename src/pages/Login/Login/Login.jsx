@@ -32,9 +32,9 @@ const Login = () => {
 
 
   return (
-    <Container className="w-25 mx-auto mb-5">
-      <h1 className="text-center mt-5 pt-5">Please login</h1>
-      <Form onSubmit={handleLogin}>
+    <Container className="d-flex flex-column align-items-center justify-content-center min-vh-100">
+      <h1 className="text-center mb-5">Welcome back!</h1>
+      <Form onSubmit={handleLogin} className="w-50">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -44,7 +44,6 @@ const Login = () => {
             required
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -54,15 +53,15 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="w-100">
           Login
         </Button>
-        <br />
-        <Form.Text className="text-secondary">
-          Don't Have an Account? <Link to="register">Register</Link>
+        <Form.Text className="mt-3 text-secondary">
+          Don't have an account yet?{' '}
+          <Link to="register" className="text-decoration-none">
+            Register now
+          </Link>
         </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
       </Form>
     </Container>
   );
