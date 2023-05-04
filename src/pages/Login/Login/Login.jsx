@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import React, { useContext } from "react";
+import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
-import { AuthContext } from '../../../providers/AuthProvider';
-import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('login page location', location);
+  console.log("login page location", location);
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
@@ -20,7 +21,30 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
+    if (!email || !password) {
+      alert("Please enter your email address and password.");
+      return;
+    }
+
+ if (password.length < 6) {
+   alert("Password must be at least 6 characters long.");
+   return;
+ }
+
     signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+           alert("Email address or password is incorrect.");
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
@@ -31,31 +55,16 @@ const Login = () => {
       });
   };
 
-
-
-  const handleGoogleSignIn = () => {
-    signInWithGoogle()
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, {replace: true})
-      })
-      .catch((error) => {
-        console.log(error)
-    })
-  }
-
-
   const handleGithubSignIn = () => {
     signInWithGitHub()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, {replace: true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-      console.log(error);
-    })
+        console.log(error);
+      });
   };
 
   return (
@@ -89,10 +98,20 @@ const Login = () => {
             Register now
           </Link>
         </Form.Text>
-        <Button onClick={handleGoogleSignIn} variant="primary" type="submit" className="w-100 mt-1 p-1">
-         <FaGoogle></FaGoogle>oogle
+        <Button
+          onClick={handleGoogleSignIn}
+          variant="primary"
+          type="submit"
+          className="w-100 mt-1 p-1"
+        >
+          <FaGoogle></FaGoogle>oogle
         </Button>
-        <Button onClick={handleGithubSignIn} variant="primary" type="submit" className="w-100 mt-1 p-1">
+        <Button
+          onClick={handleGithubSignIn}
+          variant="primary"
+          type="submit"
+          className="w-100 mt-1 p-1"
+        >
           <FaGithub></FaGithub>GitHub
         </Button>
       </Form>
