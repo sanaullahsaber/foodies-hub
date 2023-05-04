@@ -15,7 +15,7 @@ const ChefsCard = ({ chef }) => {
             <Card.Body className='text-center'>
               <Card.Title>{chef_name}</Card.Title>
               <Card.Text>
-              <h6>Experience: <span>{years_of_experience}</span></h6>
+              <h6>Experience: <span>{years_of_experience}</span> years</h6>
               <h6>Likes: <span>{likes}</span></h6>
               <h6>Number of Recipes: <span>{number_of_recipes}</span></h6>
                <Link to={`/${id}`}><Button variant="success">View Recipes</Button></Link>
