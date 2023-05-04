@@ -1,5 +1,5 @@
 ## Live Link
-Hosted in Netlify -> [FoodiesHub](https://benevolent-jalebi-b86ea1.netlify.app/)
+Hosted in Netlify -> [FoodiesHub](https://foodies-hub-858bf.web.app/)
 
 
 ## FoodiesHub Website Features
