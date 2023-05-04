@@ -81,7 +81,7 @@ const Register = () => {
             name="accept"
             label={
               <>
-                Accept <Link to="terms">Terms and Conditions</Link>
+                Accept <Link to="">Terms and Conditions</Link>
               </>
             }
           />
