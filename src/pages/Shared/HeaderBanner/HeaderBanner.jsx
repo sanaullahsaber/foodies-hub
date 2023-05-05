@@ -12,8 +12,8 @@ const HeaderBanner = () => {
     <Container className="mt-5 p-5">
       <Row>
         <Col lg={6} className="pt-5">
-          <h1 className="fs-1 fw-bold">Enjoy <span className="text-success">Delicious</span> <br />
-            <span className="text-success">Food</span> In Your <br />
+          <h1 className="fs-1 fw-bold">Enjoy <span className="text-warning">Delicious</span> <br />
+            <span className="text-warning">Food</span> In Your <br />
             Healthy Life</h1> <br />
           <p className="text-secondary fs-5 fw-bolder">
             FoodiesHub is a place where you can please your soul 
@@ -21,7 +21,7 @@ const HeaderBanner = () => {
             And our service is absolutely free. So start exploring 
             now
           </p>
-          <Button variant="success">
+          <Button variant="warning">
             EXPLORE NOW <FaArrowAltCircleRight></FaArrowAltCircleRight>{" "}
           </Button>
         </Col>

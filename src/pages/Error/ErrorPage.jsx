@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <h1 className="mb-4">Oops, something went wrong!</h1>
       <p className="mb-4">The page you are looking for cannot be found.</p>
       <Link>
-      <Button as={Link} to="/" variant="primary">
+      <Button  to="/" variant="warning">
         Go back to home
       </Button>
       </Link>

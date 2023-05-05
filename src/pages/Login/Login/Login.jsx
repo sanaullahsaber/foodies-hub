@@ -94,7 +94,7 @@ const Login = () => {
         </Button>
         <Form.Text className="mt-3 text-secondary">
           Don't have an account yet?{" "}
-          <Link to="register" className="text-decoration-none">
+          <Link to="/register" className="text-decoration-none">
             Register now
           </Link>
         </Form.Text>

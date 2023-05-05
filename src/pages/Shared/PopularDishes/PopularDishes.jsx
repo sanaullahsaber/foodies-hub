@@ -11,34 +11,62 @@ import somosa from "../../../assets/img/food/samosa.png";
 import tea from "../../../assets/img/food/tea.png";
 
 const PopularDishes = () => {
-  const [sliderRef] = useKeenSlider({
-    loop: true,
-    mode: "free",
-    slides: {
-      perView: 3,
-      spacing: 15,
+  const [sliderRef] = useKeenSlider(
+    {
+      loop: true,
     },
-  });
-
+    [
+      (slider) => {
+        let timeout;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 500);
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      },
+    ]
+  );
+ 
+  
   return (
     <Container className="mt-5">
       <h1 className="text-center fs-1 fw-bold mb-5">
-        Popular <span className="text-success">Food</span>
+        Popular <span className="text-warning">Foods</span>
       </h1>
 
-      <div className="mt-5 mb-5">
+      <div className="my-2 w-50 mx-auto">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide number-slide1">
-            <img className="h-100 w-100 img-fluid " src={biryani} alt="" />
+            <img className=" img-fluid " src={biryani} alt="" />
           </div>
           <div className="keen-slider__slide number-slide2">
-            <img className="h-100 w-100 img-fluid " src={paratha} alt="" />
+            <img className="img-fluid " src={paratha} alt="" />
           </div>
           <div className="keen-slider__slide number-slide3">
-            <img className="h-100 w-100 img-fluid " src={somosa} alt="" />
+            <img className=" img-fluid " src={somosa} alt="" />
           </div>
           <div className="keen-slider__slide number-slide4">
-            <img className="h-100 w-100 img-fluid " src={tea} alt="" />
+            <img className=" img-fluid " src={tea} alt="" />
           </div>
         </div>
       </div>

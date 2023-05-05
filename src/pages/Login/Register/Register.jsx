@@ -87,14 +87,14 @@ const Register = () => {
                 name="accept"
                 label={
                   <>
-                    Accept <Link to="">Terms and Conditions</Link>
+                    Accept <Link to="/terms">Terms and Conditions</Link>
                   </>
                 }
               />
             </Form.Group>
             <Button
               className="w-100"
-              variant="primary"
+              variant="warning"
               disabled={!accepted}
               type="submit"
             >

@@ -7,9 +7,10 @@ import Card from "react-bootstrap/Card";
 const Blog = () => {
   return (
     <div>
+      
       <Container className="mt-5 p-5">
-        <Col className="border p-4 mb-5">
-          <h3 className="text-success fw-bold">
+        <Col className="border rounded p-4 mb-5">
+          <h3 className="text-warning fw-bold">
             What is the Difference Between a Controlled and Uncontrolled
             Component in React?
           </h3>
@@ -27,8 +28,8 @@ const Blog = () => {
             turn updates the component's value.
           </p>
         </Col>
-        <Col className="border p-4 mb-5">
-          <h3 className="text-success fw-bold">
+        <Col className="border p-4 rounded mb-5">
+          <h3 className="text-warning fw-bold">
             How to validate React props using PropTypes
           </h3>
           <p className="text-primary-emphasis fw-bold">
@@ -44,8 +45,8 @@ const Blog = () => {
           </p>
         </Col>
 
-        <Col className="border p-4 mb-5">
-          <h3 className="text-success fw-bold">
+        <Col className="border rounded p-4 mb-5">
+          <h3 className="text-warning fw-bold">
             what is the difference between nodejs and express js?
           </h3>
           <p className="text-primary-emphasis fw-bold">
@@ -56,8 +57,8 @@ const Blog = () => {
             handle requests and responses.
           </p>
         </Col>
-        <Col className="border p-4 mb-5">
-          <h3 className="text-success fw-bold">
+        <Col className="border rounded p-4 mb-5">
+          <h3 className="text-warning fw-bold">
             What is a custom hook, and why will you create a custom hook?
           </h3>
           <p className="text-primary-emphasis fw-bold">

@@ -15,22 +15,22 @@ const HomeFacility = () => {
             Improve Your Culinary <br /> Skills
           </h1>
           <ul style={{ listStyleType: "none" }}>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Learn new recipes
             </li>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Experiment with food
             </li>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Write your own recipes
             </li>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Know nutrition facts
             </li>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Get cooking tips
             </li>
-            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-success">
+            <li className="fw-bolder text-secondary mb-2 border-5 border-start ps-4 border-warning">
               Get ranked
             </li>
           </ul>
@@ -42,7 +42,7 @@ const HomeFacility = () => {
           “Food is everything we are. It's an extension of nationalist feeling,
           ethnic feeling, your personal history, your province, your region,
           your tribe, your grandma. It's inseparable from those from the
-          get-go.” <span className='text-success fs-5 fw-bold'>― Anthony Bourdain</span>
+          get-go.” <span className='text-warning fs-5 fw-bold'>― Anthony Bourdain</span>
         </h3>
       </div>
     </Container>

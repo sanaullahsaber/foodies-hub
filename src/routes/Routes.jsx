@@ -2,35 +2,37 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import LoginLayout from "../layouts/LoginLayout";
-import About from '../pages/About/About'
-import Blog from '../pages/Blog/Blog'
+import About from "../pages/About/About";
+import Blog from "../pages/Blog/Blog";
 import ChefSingleCard from "../pages/ChefSingleCard/ChefSingleCard";
-import Login from "../pages/Login/Login/Login"
+import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../pages/Shared/Terms/Terms";
+import ErrorPage from "../pages/Error/ErrorPage";
 const router = createBrowserRouter([
-  
-  {
-    path: "/login",
-    element: <LoginLayout></LoginLayout>,
-    children: [
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "register",
-        element: <Register></Register>,
-      },
-      {
-        path: "terms",
-        element: <Terms></Terms>,
-      },
-    ],
-  },
+  // {
+  //   path: "/login",
+  //   element: <LoginLayout></LoginLayout>,
+  //   children: [
+  //     {
+  //       path: "/login",
+  //       element: <Login></Login>,
+  //     },
+  //     {
+  //       path: "register",
+  //       element: <Register></Register>,
+  //     },
+  //     {
+  //       path: "terms",
+  //       element: <Terms></Terms>,
+  //     },
+  //   ],
+  // },
+
   {
     path: "/",
+    errorElement: <ErrorPage></ErrorPage>,
     element: <Main></Main>,
     children: [
       {
@@ -56,6 +58,18 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "terms",
+        element: <Terms></Terms>
       },
     ],
   },

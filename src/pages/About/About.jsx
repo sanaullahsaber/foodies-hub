@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       <Container className="p-5 ">
-        <Row>
+        <Row className="p-5">
           <Col md={6}>
             <h1 className="mt-5">About Us</h1>
             <p>

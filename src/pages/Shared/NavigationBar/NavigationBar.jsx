@@ -15,17 +15,23 @@ const NavigationBar = () => {
       .then()
       .catch((error) => console.log(error));
   };
-
+//  star updating.hkhkhkb onabort,.kbl jbi kbjlhufig kuljgldgdgkd; getIdToken; gkd; gkd; gkd; gkd; gkd;
 
   return (
-    <div className="fixed-top bg-secondary">
+    <div className="fixed-top ">
       <Container>
         <Navbar expand="lg">
           <Container fluid>
-            <Navbar.Brand href="#">
-              <Link className="text-success text-decoration-none" to="/">
-                F<span className="text-light">oo</span>diesHub
-              </Link>
+            <Navbar.Brand>
+              <NavLink
+               
+                className="fs-5 text-decoration-none"
+                to="/"
+              >
+                <h2 className="fw-bold text-warning my-2">
+                  F<span className="text-dark">oo</span>diesHub
+                </h2>
+              </NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -38,8 +44,8 @@ const NavigationBar = () => {
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
-                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                      ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                      : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
                   }
                 >
                   Home
@@ -49,8 +55,8 @@ const NavigationBar = () => {
                   to="/about"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
-                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                      ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                      : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
                   }
                 >
                   About Us
@@ -60,11 +66,21 @@ const NavigationBar = () => {
                   to="/blog"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-light me-3 text-decoration-none fs-3 fw-bold"
-                      : " mx-2 text-decoration-none fs-3 fw-bold"
+                      ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                      : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
                   }
                 >
                   blog
+                </NavLink>
+                <NavLink
+                  to="/register"
+                  className={({ isActive }) =>
+                    isActive
+                      ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                      : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
+                  }
+                >
+                  Register
                 </NavLink>
 
                 <Nav className="text-light text-decoration-none fs-3 fw-bold">
@@ -73,8 +89,8 @@ const NavigationBar = () => {
                       onClick={handleLogOut}
                       className={({ isActive }) =>
                         isActive
-                          ? "text-light me-3 text-decoration-none fs-3 fw-bold"
-                          : " mx-2 text-decoration-none fs-3 fw-bold"
+                          ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                          : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
                       }
                     >
                       Logout
@@ -83,8 +99,8 @@ const NavigationBar = () => {
                     <NavLink
                       className={({ isActive }) =>
                         isActive
-                          ? "text-light me-3 text-decoration-none fs-3 fw-bold"
-                          : " mx-2 text-decoration-none fs-3 fw-bold"
+                          ? " text-dark me-3 text-decoration-none fs-3 fw-bold"
+                          : "text-warning text-orange mx-2 text-decoration-none fs-3 fw-bold"
                       }
                       to="/login"
                     >
