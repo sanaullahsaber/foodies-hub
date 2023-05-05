@@ -15,7 +15,7 @@ const Chefs = () => {
 
   return (
     <Container>
-      <h1 className="text-center fw-bolder py-5">Our <span className="text-warning">Top</span> Chefs</h1>
+     
       <Row>
         {chefs.map((chef) => (
           <Col md={4}>
