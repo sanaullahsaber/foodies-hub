@@ -1,5 +1,5 @@
 ## Live Link
-Hosted in Netlify -> [FoodiesHub](https://foodies-hub-858bf.web.app/)
+Hosted in Firebase -> [FoodiesHub](https://foodies-hub-858bf.web.app/)
 
 
 ## FoodiesHub Website Features
